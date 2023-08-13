@@ -50,6 +50,26 @@ body {
   /* Spacing styles */
   --general-box-margins: 1.5rem 1.4rem;
   --general-box-paddings: 1.5rem 1.4rem;
+
+  /* Color styles */
+  --white: #ffffff;
+  --pure-black: #000000;
+  --primary-black: #222222;
+  --sec-black: #444444;
+  --ter-black: #888888;
+  --grey-light: #eeeeee;
+  --sec-grey: #c4c4c4;
+  --primary-blue: #108cff;
+  --dark-blue: #0047ff;
+  --bg-blue: rgb(246, 248, 255);
+  --trans-blue-bg: #f5faff;
+  --green-primary: #0dca09;
+  --green-dark: #039500;
+  --green-bg-light: #e6ffe6;
+  --yellow-primary: #ffa800;
+  --yellow-bg: #fffef4;
+  --red-primary: #ff2b2b;
+  --red-bg: #ffecec;
 }
 
 a {
