@@ -1,0 +1,64 @@
+.Wrapper {
+  background: var(--white);
+  padding: 3rem;
+  border-radius: 0.7rem;
+  width: 90rem;
+  height: fit-content;
+  max-height: 85vh;
+  overflow: scroll;
+
+  display: flex;
+  flex-direction: column;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.Wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.WalletNotConnected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 1rem;
+}
+
+.WalletNotConnected h2 {
+  font-size: 3rem;
+}
+
+.WalletConnected {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.WalletConnectedText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.WalletConnectedText div:first-of-type {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.paymentConfirmation {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.paymentConfirmation h2 {
+  font-size: 2.4rem;
+}
