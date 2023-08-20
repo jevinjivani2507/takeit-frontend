@@ -13,6 +13,8 @@ import { StyledMUIInput } from "./../../Utils/Helpers/styledMUIInput";
 import BottomText from "../SignUp/Helpers/BottomText";
 import { loginUser } from "../../Services/auth.service";
 
+import { connectWallet } from "../../Services/blockchain.services";
+
 function SignIn() {
   const [, setCookie] = useCookies();
 
@@ -20,6 +22,7 @@ function SignIn() {
   const formRef = useRef(null);
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
     setIsDisabled(true);
     e.preventDefault();
 

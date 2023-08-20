@@ -91,47 +91,47 @@ function Payment({ closePopupFunction }) {
         console.log("maticPrice", maticPrice);
 
 
-        // const itemPriceInINR = paymentsData.data.amount;
-        // const itemPriceInETH = itemPriceInINR / ethPrice.data.ethereum.inr;
-        // const itemPriceInWei = Web3.utils.toWei(
-        //   itemPriceInETH.toFixed(10).toString(),
-        //   "ether"
-        // );
+        const itemPriceInINR = paymentsData.data.amount;
+        const itemPriceInETH = itemPriceInINR / ethPrice.data.ethereum.inr;
+        const itemPriceInWei = Web3.utils.toWei(
+          itemPriceInETH.toFixed(10).toString(),
+          "ether"
+        );
 
-        // console.log("itemPriceInETH", itemPriceInETH);
-        // console.log("itemPriceInWei", itemPriceInWei);
-        // console.log("itemPriceInINR", itemPriceInINR);
-        // console.log("ethPrice", ethPrice);
-        // setItemPriceInWie(itemPriceInWei);
-        // setItemPriceInEth(itemPriceInETH);
+        console.log("itemPriceInETH", itemPriceInETH);
+        console.log("itemPriceInWei", itemPriceInWei);
+        console.log("itemPriceInINR", itemPriceInINR);
+        console.log("ethPrice", ethPrice);
+        setItemPriceInWie(itemPriceInWei);
+        setItemPriceInEth(itemPriceInETH);
       }
     };
     fetchPrice();
   }, [paymentsData]);
 
   const makePaymentRequest = () => {
-    // const sellerAddress = "0xB46233500f2eDEaba24674e0714D344C08916ec2";
-    // // Start wallet payment process
-    // const amountInHash = Web3.utils.toHex(itemPriceInWei);
-    // window.ethereum
-    //   .request({
-    //     method: "eth_sendTransaction",
-    //     params: [
-    //       { from: buyerAddress, to: sellerAddress, value: amountInHash },
-    //     ],
-    //   })
-    //   .then((response) => {
-    //     console.log(response);
-    //     notify("Payment Successful", "success");
-    //     paymentsData.data.callbackFun();
-    //     closePopupFunction();
-    //     return true;
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //     notify("Payment Failed", "error");
-    //     return false;
-    //   });
+    const sellerAddress = "0xB46233500f2eDEaba24674e0714D344C08916ec2";
+    // Start wallet payment process
+    const amountInHash = Web3.utils.toHex(itemPriceInWei);
+    window.ethereum
+      .request({
+        method: "eth_sendTransaction",
+        params: [
+          { from: buyerAddress, to: sellerAddress, value: amountInHash },
+        ],
+      })
+      .then((response) => {
+        console.log(response);
+        notify("Payment Successful", "success");
+        paymentsData.data.callbackFun();
+        closePopupFunction();
+        return true;
+      })
+      .catch((error) => {
+        console.log(error);
+        notify("Payment Failed", "error");
+        return false;
+      });
   };
 
   return (

@@ -31,3 +31,11 @@
 .BottomSecWrapper {
   margin-top: 4rem;
 }
+
+.connectWallet {
+  width: 45%;
+  max-width: 20rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+}
