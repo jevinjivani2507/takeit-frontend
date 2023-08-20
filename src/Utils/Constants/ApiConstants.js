@@ -32,8 +32,9 @@ export const GET_USER_ORDERS_URL = ORDER_URL + "getorderforuser";
 export const GET_SELLER_PRODUCTS = PRODUCT_URL + "getproductseller";
 export const GET_ORDER_DATA_BY_ID = ORDER_URL + "getorderbyid";
 export const UPDATE_ORDER_STATUS_URL = ORDER_URL + "updatestatus";
+export const SOCIAL_MEDIA_SHARE = USER_URL + "shareproduct";
 
 export const UPLOAD_IMAGE_URL = STORAGE_URL + "uploadImages";
 export const GET_ORDER_FOR_SELLER = ORDER_URL + "getorderforseller";
 
-export const CONTRACT_ADDRESS = "0xb1Ed4197E037426F03Cae4F5Df09C4F0e99DCcc1"
+export const CONTRACT_ADDRESS = "0xb1Ed4197E037426F03Cae4F5Df09C4F0e99DCcc1";

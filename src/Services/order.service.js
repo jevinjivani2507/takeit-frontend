@@ -16,6 +16,7 @@ export const addProductToOrder = async (
   address
 ) => {
   try {
+    console.log(1);
     const { data } = await axios.post(
       ADD_PRODUCT_TO_ORDER_URL,
       {
@@ -30,8 +31,10 @@ export const addProductToOrder = async (
         },
       }
     );
+    console.log(2);
     return data;
   } catch (err) {
+    console.log(3);
     throw err;
   }
 };

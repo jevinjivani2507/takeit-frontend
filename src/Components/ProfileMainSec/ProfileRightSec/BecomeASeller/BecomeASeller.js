@@ -29,28 +29,28 @@ function BecomeASellerSec({ refreshUserData }) {
 
     try {
 
-      // const { ethereum } = window;
+      const { ethereum } = window;
 
-      // if (ethereum) {
-      //   const account = await ethereum.request({
-      //     method: "eth_requestAccounts",
-      //   });
-      // }
-      // const provider = new ethers.providers.Web3Provider(ethereum);
-      // const signer = provider.getSigner();
+      if (ethereum) {
+        const account = await ethereum.request({
+          method: "eth_requestAccounts",
+        });
+      }
+      const provider = new ethers.providers.Web3Provider(ethereum);
+      const signer = provider.getSigner();
 
-      // const contract = new ethers.Contract(
-      //   "0x3c16502622f054Ce36d935f0a218A80bbd44adfF",
-      //   abi.abi,
-      //   signer
-      // );
+      const contract = new ethers.Contract(
+        "0x3c16502622f054Ce36d935f0a218A80bbd44adfF",
+        abi.abi,
+        signer
+      );
 
-      // const tx = await contract.createTakeItToken(
-      //   elements.tokenName.value,
-      //   elements.tokenSymbol.value
-      // );
+      const tx = await contract.createTakeItToken(
+        elements.tokenName.value,
+        elements.tokenSymbol.value
+      );
 
-      // console.log("Token created -- success",tx);
+      console.log("Token created -- success",tx);
 
 
       const data = await becomeASeller(

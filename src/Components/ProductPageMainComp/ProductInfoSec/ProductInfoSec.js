@@ -9,6 +9,7 @@ import Button from "./../../Button/index";
 import { ReactComponent as PlusIcon } from "../../../Assets/Product/Plus.svg";
 import notify from "./../../../Utils/Helpers/notifyToast";
 import { uploadImage } from "./../../../Services/storage.service";
+import { shareProduct } from "../../../Services/user.service";
 
 import { ReactComponent as Facebook } from "../../../Assets/Socials/Facebook.svg";
 import { ReactComponent as Instagram } from "../../../Assets/Socials/Instagram.svg";
@@ -16,9 +17,24 @@ import { ReactComponent as Twitter } from "../../../Assets/Socials/Twitter.svg";
 import { ReactComponent as LinkedIn } from "../../../Assets/Socials/LinkedIn.svg";
 import { ReactComponent as YouTube } from "../../../Assets/Socials/YouTube.svg";
 
-const ShareOnSocial = () => {
+import { useCookies } from "react-cookie";
+
+const ShareOnSocial = ({ productId }) => {
   const url = window.location.href;
-  const description = "Hello, Guys";
+  const description = "Hello, Guys I had bought this product from TakeIt";
+
+  const [cookie, setCookie] = useCookies(["token"]);
+
+  const handleShare = async () => {
+    // console.log(cookie.token);
+    try {
+      const response = await shareProduct(cookie.token, productId);
+      console.log(response);
+    } catch (err) {
+      console.log(err);
+      notify("Internal Server Error", "error");
+    }
+  };
 
   function ShareWebAPI() {
     if (navigator.share) {
@@ -35,7 +51,7 @@ const ShareOnSocial = () => {
       <div className={styles.AddressTitle}>Share on:</div>
       <div className={styles.shareOnSocials}>
         {/* Facebook */}
-        <div className={styles.socialIconWrapper}>
+        <div className={styles.socialIconWrapper} onClick={handleShare}>
           <a
             href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}
             target="_blank"
@@ -45,7 +61,7 @@ const ShareOnSocial = () => {
         </div>
 
         {/* Twitter */}
-        <div className={styles.socialIconWrapper}>
+        <div className={styles.socialIconWrapper} onClick={handleShare}>
           <a
             href={`https://twitter.com/intent/tweet?url=${url}&text=${encodeURI(
               description
@@ -57,7 +73,7 @@ const ShareOnSocial = () => {
         </div>
 
         {/* Pintrest */}
-        <div className={styles.socialIconWrapper}>
+        <div className={styles.socialIconWrapper} onClick={handleShare}>
           <a
             href={`https://pinterest.com/pin/create/button/?url=${url}&media=&description=${encodeURI(
               description
@@ -69,7 +85,7 @@ const ShareOnSocial = () => {
         </div>
 
         {/* LinkdIN */}
-        <div className={styles.socialIconWrapper}>
+        <div className={styles.socialIconWrapper} onClick={handleShare}>
           <a
             href={`https://www.linkedin.com/shareArticle?mini=true&url=${url}`}
             target="_blank"
@@ -79,7 +95,7 @@ const ShareOnSocial = () => {
         </div>
 
         {/* Email */}
-        <div className={styles.socialIconWrapper}>
+        <div className={styles.socialIconWrapper} onClick={handleShare}>
           <a
             href={`mailto:info@example.com?&subject=You+have+to+See+this!&cc=&bcc=&body=Check+out+this+site:${url}\n${encodeURI(
               description
@@ -147,7 +163,7 @@ function ProductInfoSec({
             {productDetails.count} {PRODUCT_PAGE_DATA.reviews}
           </span>
         </div>
-        <ShareOnSocial />
+        <ShareOnSocial productId={productDetails._id} />
         {productDetails.requiredAttachments.length > 0 && (
           <div className={styles.CustomizableTag}>
             {PRODUCT_PAGE_DATA.customizable}

@@ -10,6 +10,7 @@ import {
   REMOVE_FROM_WISHLIST_URL,
   MOVE_TO_WISHLIST_URL,
   GET_WISHLIST_DATA,
+  SOCIAL_MEDIA_SHARE,
 } from "../Utils/Constants/ApiConstants";
 
 export const getUserData = async (accessToken) => {
@@ -175,6 +176,25 @@ export const moveProductFromCartToWishlist = async (accessToken, cart_id) => {
       MOVE_TO_WISHLIST_URL,
       {
         cart_id,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }
+    );
+    return data;
+  } catch (err) {
+    throw err;
+  }
+};
+
+export const shareProduct = async (accessToken, product_id) => {
+  try {
+    const { data } = await axios.post(
+      SOCIAL_MEDIA_SHARE,
+      {
+        product_id,
       },
       {
         headers: {

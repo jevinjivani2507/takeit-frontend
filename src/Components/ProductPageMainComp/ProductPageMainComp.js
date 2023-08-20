@@ -13,6 +13,8 @@ function ProductPageMainComp({ productDetails, refreshDataFun }) {
     attachments: {},
   });
 
+  console.log("currentSelections", productDetails);
+
   return (
     <div className={styles.Wrapper}>
       <div className={styles.UpperSection}>
