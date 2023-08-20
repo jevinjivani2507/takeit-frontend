@@ -16,6 +16,9 @@ import notify from "./../../Utils/Helpers/notifyToast";
 import { addCartToOrder } from "../../Services/order.service";
 import { useNavigate } from "react-router-dom";
 
+// import { StyledMUIInput } from "../../../../Utils/Helpers/styledMUIInput";
+import { StyledMUIInput } from "../../Utils/Helpers/styledMUIInput";
+
 function CartMainSec({ cartData, addresses, refreshDataFunction }) {
   const userData = useSelector((state) => state.userReducer.userData);
   const dispatch = useDispatch();
@@ -113,6 +116,18 @@ function CartMainSec({ cartData, addresses, refreshDataFunction }) {
             withIcon
             IconComp={PlusIcon}
           />
+
+          <StyledMUIInput
+            fullWidth
+            id="ConfirmPassword"
+            label="Referral Code (Optional)"
+            variant="standard"
+            type="password"
+            margin="dense"
+            autoComplete="current-password"
+            // disabled={isDisabled}
+          />
+
           <h5 className={styles.RightHeading + " " + styles.PaymentHeading}>
             {CART_DATA.payment}
           </h5>

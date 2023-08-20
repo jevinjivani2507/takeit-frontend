@@ -81,18 +81,14 @@ function Payment({ closePopupFunction }) {
       if (paymentsData.show) {
         // convert item price from inr to wei
         const ethPrice = await axios.get(
-          `https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=inr`
+          `https://api.coingecko.com/api/v3/simple/price?ids=matic-network&vs_currencies=inr `
         );
         console.log("ethPrice", ethPrice);
 
-        const maticPrice = await axios.get(
-          `https://api.coingecko.com/api/v3/simple/price?ids=MATIC&vs_currencies=inr`
-        );
-        console.log("maticPrice", maticPrice);
-
+        
 
         const itemPriceInINR = paymentsData.data.amount;
-        const itemPriceInETH = itemPriceInINR / ethPrice.data.ethereum.inr;
+        const itemPriceInETH = itemPriceInINR / ethPrice.data["matic-network"]["inr"];
         const itemPriceInWei = Web3.utils.toWei(
           itemPriceInETH.toFixed(10).toString(),
           "ether"
