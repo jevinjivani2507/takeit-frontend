@@ -189,7 +189,7 @@ function ProductInfoSec({
           </div>
         </div>
       )}
-
+      
       <div div className={styles.SpecificationSec}>
         <h5 className={styles.SpecificationTitle}>
           {PRODUCT_PAGE_DATA.specifications}

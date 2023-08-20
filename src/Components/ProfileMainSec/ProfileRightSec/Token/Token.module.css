@@ -1,0 +1,30 @@
+.Wrapper {
+    width: 100%;
+  }
+  
+  .TopSec {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    height: 6rem;
+    border-bottom: 1px solid var(--sec-grey);
+  }
+  
+  .Title {
+    font-size: var(--font-20);
+    color: var(--primary-black);
+    font-weight: 500;
+  }
+  
+  .BottomSec {
+    width: 100%;
+  }
+  
+  .LIstItemWrapper {
+    border-bottom: 1px solid var(--sec-grey);
+    margin: 0 2rem;
+    padding: 0.5rem 0;
+  }
+  

@@ -151,6 +151,10 @@ export const PROFILE_DATA = {
       to: "/wishlist",
     },
     {
+      title: "Tokens",
+      to: "/tokens",
+    },
+    {
       title: "Become a Seller",
       to: "/become-a-seller",
       onlyUser: true,
@@ -229,6 +233,9 @@ export const PROFILE_DATA = {
     title: "Your Products",
     addNewProduct: "Add New Product",
     reviews: "Reviews",
+  },
+  tokensSec: {
+    title: "Your Tokens",
   },
 };
 
