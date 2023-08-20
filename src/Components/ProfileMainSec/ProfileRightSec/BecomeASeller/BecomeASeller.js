@@ -9,18 +9,50 @@ import Button from "../../../Button";
 import { becomeASeller } from "./../../../../Services/user.service";
 import notify from "./../../../../Utils/Helpers/notifyToast";
 
+import { ethers } from "ethers";
+
+import abi from "./../../../../Utils/TakeItTokenFactory.json";
+
 function BecomeASellerSec({ refreshUserData }) {
   const userData = useSelector((state) => state.userReducer.userData);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const elements = e.target.elements;
+    console.log(elements);
     console.log(elements.ShopName.value);
     console.log(elements.GstIn.value);
     console.log(elements.PickupAddress.value);
     console.log(elements.PickupPincode.value);
+    console.log(elements.tokenName.value);
+    console.log(elements.tokenSymbol.value);
 
     try {
+
+      // const { ethereum } = window;
+
+      // if (ethereum) {
+      //   const account = await ethereum.request({
+      //     method: "eth_requestAccounts",
+      //   });
+      // }
+      // const provider = new ethers.providers.Web3Provider(ethereum);
+      // const signer = provider.getSigner();
+
+      // const contract = new ethers.Contract(
+      //   "0x3c16502622f054Ce36d935f0a218A80bbd44adfF",
+      //   abi.abi,
+      //   signer
+      // );
+
+      // const tx = await contract.createTakeItToken(
+      //   elements.tokenName.value,
+      //   elements.tokenSymbol.value
+      // );
+
+      // console.log("Token created -- success",tx);
+
+
       const data = await becomeASeller(
         userData.accessToken,
         elements.ShopName.value,
@@ -28,7 +60,9 @@ function BecomeASellerSec({ refreshUserData }) {
         {
           address: elements.PickupAddress.value,
           pincode: elements.PickupPincode.value,
-        }
+        },
+        elements.tokenName.value,
+        elements.tokenSymbol.value
       );
       refreshUserData();
       console.log(refreshUserData);
@@ -92,6 +126,23 @@ function BecomeASellerSec({ refreshUserData }) {
                     .placeholder
                 }
                 id={PROFILE_DATA.becomeASellerSec.feilds[2].subFeilds[1].id}
+              />
+            </div>
+          </div>
+          <div className={styles.KeyValuePair + " " + styles.PickupAddressPair}>
+            <h4 className={styles.Key}>Token Information</h4>
+            <div className={styles.PickupAddress}>
+              <input
+                className={styles.ValueInput}
+                type="text"
+                placeholder={"Token Name"}
+                id="tokenName"
+              />
+              <input
+                className={styles.ValueInput}
+                type="text"
+                placeholder={"Token Symbol"}
+                id="tokenSymbol"
               />
             </div>
           </div>

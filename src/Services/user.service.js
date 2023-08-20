@@ -42,7 +42,9 @@ export const becomeASeller = async (
   accessToken,
   shop_name,
   gst_id,
-  pickup_address
+  pickup_address,
+  token_name,
+  token_symbol
 ) => {
   try {
     const { data } = await axios.post(
@@ -51,6 +53,8 @@ export const becomeASeller = async (
         shop_name,
         gst_id,
         pickup_address,
+        token_name,
+        token_symbol,
       },
       {
         headers: {
