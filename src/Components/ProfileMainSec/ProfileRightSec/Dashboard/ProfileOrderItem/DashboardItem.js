@@ -40,7 +40,7 @@ function DashboardItem({ OrderDetails }) {
           <h4 className={styles.Key}>{PROFILE_DATA.dashboardSec.total}</h4>
           <h5
             className={styles.Value}
-          >{`₹${OrderDetails.product_details.price}`}</h5>
+          >{`₹${OrderDetails?.product_details?.price}`}</h5>
         </div>
         <div className={styles.KeyValuePair}>
           <h4 className={styles.Key}>{PROFILE_DATA.dashboardSec.status}</h4>

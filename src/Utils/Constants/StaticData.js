@@ -235,7 +235,7 @@ export const PROFILE_DATA = {
     reviews: "Reviews",
   },
   tokensSec: {
-    title: "Your Tokens",
+    title: "Token Transactions",
   },
 };
 

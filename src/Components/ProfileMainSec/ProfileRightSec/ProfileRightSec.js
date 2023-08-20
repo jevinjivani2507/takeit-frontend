@@ -49,9 +49,9 @@ function ProfileRightSec({ refreshUserData }) {
         <Route
           path="tokens"
           element={
-            <SellerSafeRoute redirectPath="/profile/">
+            // <SellerSafeRoute redirectPath="/profile/">
               <Token />
-            </SellerSafeRoute>
+            // </SellerSafeRoute>
           }
         />
         <Route path="*" element={<Navigate to="/profile/" />} />

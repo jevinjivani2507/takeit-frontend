@@ -21,6 +21,7 @@ function OrdersSec() {
 
     try {
       const response = await getUserOrders(userData.accessToken);
+      console.log(response);
       setOrders(response);
     } catch (error) {
       console.log(error);

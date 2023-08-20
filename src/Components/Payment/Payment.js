@@ -26,7 +26,6 @@ function Payment({ closePopupFunction }) {
   const [itemPriceInWei, setItemPriceInWie] = useState(0);
   const [itemPriceInEth, setItemPriceInEth] = useState(0);
 
-  
   const connectWallet = async () => {
     try {
       setProcessing(true);
@@ -85,10 +84,10 @@ function Payment({ closePopupFunction }) {
         );
         console.log("ethPrice", ethPrice);
 
-        
-
-        const itemPriceInINR = paymentsData.data.amount;
-        const itemPriceInETH = itemPriceInINR / ethPrice.data["matic-network"]["inr"];
+        // const itemPriceInINR = paymentsData.data.amount;
+        const itemPriceInINR = 0;
+        const itemPriceInETH =
+          itemPriceInINR / ethPrice.data["matic-network"]["inr"];
         const itemPriceInWei = Web3.utils.toWei(
           itemPriceInETH.toFixed(10).toString(),
           "ether"

@@ -1,30 +1,81 @@
 .Wrapper {
-    width: 100%;
-  }
+  width: 100%;
+}
+
+.TopSec {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  height: 6rem;
+  border-bottom: 1px solid var(--sec-grey);
+}
+
+.Title {
+  font-size: var(--font-20);
+  color: var(--primary-black);
+  font-weight: 500;
+}
+
+.BottomSec {
+  width: 100%;
+}
+
+.LIstItemWrapper {
+  border-bottom: 1px solid var(--sec-grey);
+  margin: 0 2rem;
+  padding: 0.5rem 0;
+}
+
+.tokenWrapper {
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  grid-gap: 2rem;
+}
+
+.tokenImgWrapper{
+  position: relative;
+  height: 4rem;
+  width: 4rem;
+  border: 1px solid var(--sec-grey);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--sec-grey);
+}
+
+.tokenLogo {
+  font-size: var(--font-16);
+  color: var(--sec-black);
+  font-weight: 600;
+  max-width: 58rem;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.tokenContent{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tokenCompanyWrapper{
+  position: absolute;
+  background-color: #FA7000;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  top: -10%;
+  right: -10%;
+  box-shadow: 0px 0px 5px 0px #00000080;
   
-  .TopSec {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 2.5rem;
-    height: 6rem;
-    border-bottom: 1px solid var(--sec-grey);
-  }
-  
-  .Title {
-    font-size: var(--font-20);
-    color: var(--primary-black);
-    font-weight: 500;
-  }
-  
-  .BottomSec {
-    width: 100%;
-  }
-  
-  .LIstItemWrapper {
-    border-bottom: 1px solid var(--sec-grey);
-    margin: 0 2rem;
-    padding: 0.5rem 0;
-  }
-  
+}
