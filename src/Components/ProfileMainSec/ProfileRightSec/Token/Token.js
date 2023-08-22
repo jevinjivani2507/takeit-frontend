@@ -16,6 +16,8 @@ const filterProductPurchaseType = (productPurchaseType) => {
       return "referral";
     case "Order token":
       return "product purchase";
+    case "shared token":
+      return "social media share";
     default:
       return "Buy";
   }
@@ -34,7 +36,9 @@ const EachToken = (
   return (
     <div className={styles.tokenWrapper}>
       <div className={styles.tokenImgWrapper}>
-        <h4 className={styles.tokenLogo}>K</h4>
+        <h4 className={styles.tokenLogo}>
+          {tokenName.slice(0, 1).toUpperCase()}
+        </h4>
         <img src={Matic} className={styles.tokenCompanyWrapper} alt="" />
       </div>
       <div className={styles.tokenContent}>
