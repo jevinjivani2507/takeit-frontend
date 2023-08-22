@@ -85,7 +85,7 @@ export const SIGN_UP_DATA = {
       linkTo: "/login",
     },
     bottomText: {
-      title: "By signing up you agree to Makeit's",
+      title: "By signing up you agree to TakeIt's",
       link: "Terms of Service",
       link2: " Privacy Policy",
       linkTo: "/terms",
@@ -103,7 +103,7 @@ export const SIGN_IN_DATA = {
       linkTo: "/signup",
     },
     bottomText: {
-      title: "By signing in you agree to Makeit's",
+      title: "By signing in you agree to TakeIt's",
       link: "Terms of Service",
       link2: " Privacy Policy",
       linkTo: "/terms",
