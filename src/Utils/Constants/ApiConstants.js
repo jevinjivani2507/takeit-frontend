@@ -33,6 +33,7 @@ export const GET_SELLER_PRODUCTS = PRODUCT_URL + "getproductseller";
 export const GET_ORDER_DATA_BY_ID = ORDER_URL + "getorderbyid";
 export const UPDATE_ORDER_STATUS_URL = ORDER_URL + "updatestatus";
 export const SOCIAL_MEDIA_SHARE = USER_URL + "shareproduct";
+export const GET_TOKEN_DATA = USER_URL + "alltoken";
 
 export const UPLOAD_IMAGE_URL = STORAGE_URL + "uploadImages";
 export const GET_ORDER_FOR_SELLER = ORDER_URL + "getorderforseller";

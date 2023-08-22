@@ -11,6 +11,7 @@ import {
   MOVE_TO_WISHLIST_URL,
   GET_WISHLIST_DATA,
   SOCIAL_MEDIA_SHARE,
+  GET_TOKEN_DATA,
 } from "../Utils/Constants/ApiConstants";
 
 export const getUserData = async (accessToken) => {
@@ -202,6 +203,24 @@ export const shareProduct = async (accessToken, product_id) => {
         },
       }
     );
+    return data;
+  } catch (err) {
+    throw err;
+  }
+};
+
+export const getAllToken = async (accessToken) => {
+  try {
+    const { data } = await axios.post(
+      GET_TOKEN_DATA,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }
+    );
+    console.log(data);
     return data;
   } catch (err) {
     throw err;

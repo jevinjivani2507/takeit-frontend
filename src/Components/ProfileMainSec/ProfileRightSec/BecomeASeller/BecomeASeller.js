@@ -40,7 +40,7 @@ function BecomeASellerSec({ refreshUserData }) {
       const signer = provider.getSigner();
 
       const contract = new ethers.Contract(
-        "0x3c16502622f054Ce36d935f0a218A80bbd44adfF",
+        "0xD4b5dF769E8ebB1E93F45D1876a3432e4aB2CE25",
         abi.abi,
         signer
       );
