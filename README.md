@@ -5,7 +5,7 @@
 
 </div>
 <div align="center">
- <h3><a href="https://melomint.vercel.app/">Explore Melomint🔗</a></h3>
+ <h3><a href="https://takeit-flipkart.netlify.app/">Explore TakeIt🔗</a></h3>
 </div>
 
 ## Objective
@@ -49,7 +49,31 @@ At the heart of our project lies the overarching goal to revolutionize the lands
 
 ## Screenshots
 
+![image](https://github.com/jevinjivani2507/takeit-frontend/assets/74830378/9cb299bb-a928-44dd-b9a3-b26d6718ef1d)
 
+<br>
+
+![image](https://github.com/jevinjivani2507/takeit-frontend/assets/74830378/c374be56-360b-4b75-8f91-c7b6b813434e)
+
+<br>
+
+![image](https://github.com/jevinjivani2507/takeit-frontend/assets/74830378/8ca40ec8-2763-4de6-8329-c32d4bef9f35)
+
+<br>
+
+![image](https://github.com/jevinjivani2507/takeit-frontend/assets/74830378/135f7037-3425-4fd5-820f-2efbdfb63c8f)
+
+<br>
+
+![image](https://github.com/jevinjivani2507/takeit-frontend/assets/74830378/74ab8a9a-a511-4796-82ab-d4d359139e9c)
+
+<br>
+
+![image](https://github.com/jevinjivani2507/takeit-frontend/assets/74830378/f9b2559b-44bb-4c8b-9def-2a074d414cb0)
+
+<br>
+
+![image](https://github.com/jevinjivani2507/takeit-frontend/assets/74830378/1e1d4dd2-d1e9-4c94-b352-d66907931c99)
 
 ## 🔗 Know the Project Creater
 
