@@ -1,7 +1,7 @@
 export const PINCODE_TO_CITY_URL = "https://api.postalpincode.in/pincode/";
 
-// export const BASE_URL = "https://takeit-l7ig.onrender.com/api/";
-export const BASE_URL = "http://localhost:8000/api/";
+export const BASE_URL = "https://takeit-l7ig.onrender.com/api/";
+// export const BASE_URL = "http://localhost:8000/api/";
 export const STORAGE_URL = "https://takeit-storage.onrender.com/";
 // export const STORAGE_URL = "http://localhost:8000/";
 
