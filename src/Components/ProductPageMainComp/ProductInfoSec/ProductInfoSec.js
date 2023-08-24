@@ -18,6 +18,9 @@ import { ReactComponent as LinkedIn } from "../../../Assets/Socials/LinkedIn.svg
 import { ReactComponent as YouTube } from "../../../Assets/Socials/YouTube.svg";
 
 import { useCookies } from "react-cookie";
+import { ethers } from "ethers";
+import abi from "./../../../Utils/TakeItTokenFactory.json";
+
 
 const ShareOnSocial = ({ productId }) => {
   const url = window.location.href;
@@ -119,6 +122,8 @@ function ProductInfoSec({
 
   const inputRefs = useRef([]);
 
+  console.log(productDetails);
+
   // const [currentSelections, setCurrentSelections] = useState({
   //   size: 0,
   //   address: 0,
@@ -150,11 +155,41 @@ function ProductInfoSec({
     }
   };
 
+  
+  const getSellerTokenAddress = async (address) => {
+    try {
+      const { ethereum } = window;
+
+      if (ethereum) {
+        const account = await ethereum.request({
+          method: "eth_requestAccounts",
+        });
+      }
+      const provider = new ethers.providers.Web3Provider(ethereum);
+      const signer = provider.getSigner();
+
+      const contract = new ethers.Contract(
+        "0xD4b5dF769E8ebB1E93F45D1876a3432e4aB2CE25",
+        abi.abi,
+        signer
+      );
+
+      const tx = await contract.getTokenAddress(address);
+      // await tx.wait();
+      console.log(tx);
+            
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div className={styles.Wrapper}>
       <div className={styles.TitleInfoSec}>
         <div className={styles.Header}>
           <h5 className={styles.SellerName}>{productDetails.shop_name}</h5>
+          {/* <h5 className={styles.SellerName}>{getSellerTokenAddress(productDetails.sellerAddress)}</h5> */}
+          <h5 className={styles.SellerName}>{productDetails.sellerAddress}</h5>
           <h4 className={styles.ProductName}>{productDetails.title}</h4>
         </div>
         <div div className={styles.ReviewsSec}>

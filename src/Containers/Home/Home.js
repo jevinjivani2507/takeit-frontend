@@ -28,11 +28,12 @@ const Home = () => {
       if (location.pathname !== "/") {
         navigate("/");
       }
-    } else {
-      if (location.pathname === "/") {
-        navigate("/login");
-      }
     }
+    //  else {
+    //   if (location.pathname === "/") {
+    //     navigate("/login");
+    //   }
+    // }
   }, [userData]);
 
   useEffect(() => {

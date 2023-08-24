@@ -31,6 +31,7 @@ export const addProduct = async (authToken, productData) => {
 };
 
 export const getProductDataById = async (productId) => {
+  console.log(productId);
   try {
     const { data } = await axios.get(
       GET_PRODUCT_DATA_BY_ID + `?product_id=${productId}`
