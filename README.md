@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Melomint Frontend</h1>
+  <h1>takeIt Frontend</h1>
 
 <img width="250" alt="Logo" src="https://github.com/jevinjivani2507/takeit-frontend/assets/74830378/8b4126a0-63dd-48be-b2ae-a41f37673ee2">
 
